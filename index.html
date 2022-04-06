@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>API Reference</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      #disclaimer {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        font-family: sans-serif;
+        color: #fff;
+        background-color: #c05f68;
+        text-align: center;
+      }
+      #disclaimer > p {
+        padding: 1em;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="disclaimer"><p>This page is a Zuora internal draft and cannot be viewed by customers</p></div>
+    <div id="redoc_container" />
+    <script src="https://www.zuora.com/wp-content/themes/zuora/js/redocpro-standalone.min.js"></script>
+    <script>
+      RedocPro.init(
+        'swagger.json',
+        {
+          pagination: 'section',
+          generateCodeSamples: {
+            languages: [{ lang: 'Java' , label: 'Java'}],
+            skipOptionalParameters: true,
+          },
+          generatedPayloadSamplesMaxDepth: 1,
+          theme: {
+            colors: {
+              primary: {
+                main: '#6C96A1',
+              },
+              text: {
+              primary: "#4D4D4E",
+              secondary: "#4d4d4d"
+            },
+            },
+            spacing: {
+              sectionVertical: 4,
+            },
+            typography: {
+              fontFamily: `Brandon Grotesque, 'Helvetica Neue', Helvetica, Arial, sans-serif`,
+              fontSize: '20px',
+              lineHeight: '1.6em',
+              code: {
+                code: '#87E8C7',
+                backgroundColor: '#4D4D4E',
+                fontSize: '15px'
+              },
+              fieldName: {
+                fontWeight: 'bold',
+                fontFamily: `Brandon Grotesque, 'Helvetica Neue', Helvetica, Arial, sans-serif`,
+              },
+              headings: {
+                fontFamily: `Brandon Grotesque, 'Helvetica Neue', Helvetica, Arial, sans-serif`,
+              },
+              heading1:{
+                color: '#4D4D4E',
+                fontWeight: 'bold'
+              }
+            },
+            rightPanel: {
+              backgroundColor: '#F4F7FA'
+            },
+            menu: {
+              backgroundColor: '#F4F7FA',
+            },
+            sidebar: {
+              width: '220px'
+            }
+          },
+          hooks: {
+            BeforeOperationSummary: operation => ({ html: `<i>ID: ${operation.summary}</i>` }),
+          },
+        },
+        document.querySelector('#redoc_container')
+      );
+    </script>
+  </body>
+</html>
