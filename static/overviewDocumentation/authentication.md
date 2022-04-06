@@ -11,8 +11,8 @@ Take the following steps to create authentication credentials and add them to yo
     3. Note down the client ID and client secret. You’ll need them to configure your client. This is a one-time process. See Create an OAuth client for a user for details.
 3. Configure the library with your keys so that it can make requests to the Zuora API.
 
-**Java  Node**
-
+**Java**
+```
 String CLIENT_ID = System.getenv("CLIENT_ID");
 
 String CLIENT_SECRET = System.getenv("CLIENT_SECRET");
@@ -20,7 +20,7 @@ String CLIENT_SECRET = System.getenv("CLIENT_SECRET");
 String ENDPOINT = System.getenv("ENDPOINT_BASE");
 
 ZuoraClient zuoraClient = new ZuoraClient(CLIENT_ID, CLIENT_SECRET, ENDPOINT);
-
+```
 To protect your tenant from unauthorized access be sure not to share your credentials in publicly accessible areas such as GitHub or client-side code.
 
 All API requests must be made over HTTPS. Calls made over plain HTTP will fail. API requests without authentication will also fail.
